@@ -1,5 +1,4 @@
 from django.urls import path
-
 from . import views
 
 app_name = "polls"
@@ -14,11 +13,11 @@ urlpatterns = [
     # ex: /polls/5/vote/
     path("<int:question_id>/vote/", views.vote, name="vote"),
 
-    path("<str:question_id>/", views.detail, name="detail"),
+    path("<int:question_id>/newchoice/", views.newchoice, name="newchoice"),
 
-    path("<str:question_id>/results/", views.results, name="results"),
+    path("<int:question_id>/vote_reset/", views.vote_reset, name="vote_reset"),
 
-    path("<str:question_id>/vote/", views.vote, name="vote"),
+    path("addques/", views.addques, name="addques"),
 
-    #path("<int:question_id>/vote/", views.new_choice, name="add new choice"),
+    path("newques/", views.newques, name="newques"),
 ]
