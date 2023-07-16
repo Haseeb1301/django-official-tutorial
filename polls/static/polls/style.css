@@ -1,7 +1,16 @@
-li a {
-    color: rgb(247, 60, 13);
+li a, ::marker{
+    color: yellow;
+    font-size: 20px;
 }
 
 body {
-    background: url("images/background.jpg") no-repeat ;
+    background: url("images/background1.jpg");
+    background-size: cover;
+    background-position: 50% 50%;
 }
+
+.link1 {
+    color: green;
+    font-size: 20px;
+}
+

@@ -3,19 +3,19 @@
 <link rel="stylesheet" href="{% static 'polls/style.css' %}">
 
 {% if latest_question_list %}
-    <ul>
+    <ol>
     {% for question in latest_question_list %}
         <li>
             <a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}
             </a>
             </li>
     {% endfor %}
-    </ul>
+    </ol>
                
 {% else %}
      <p>No polls are available.</p>
 {% endif %}
 
-<a href="{% url 'polls:addques' %}">Add new Question?</a>
+<a class="link1" href="{% url 'polls:addques' %}">Add new Question?</a>
 
 
