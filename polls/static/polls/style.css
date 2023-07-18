@@ -14,3 +14,12 @@ body {
     font-size: 20px;
 }
 
+.editques {
+    color: blue;
+    font-size: 20px;
+}
+
+.deleteq {
+    color: red;
+    font-size: 20px;
+}

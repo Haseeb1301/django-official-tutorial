@@ -20,4 +20,10 @@ urlpatterns = [
     path("addques/", views.addques, name="addques"),
 
     path("newques/", views.newques, name="newques"),
+
+    path("<int:id>/editques/", views.editques, name="editques"),
+
+   # path("updatques/", views.updatques, name="updatques")
+
+    path("<int:id>/deleteq/", views.deleteq, name="deleteq")
 ]

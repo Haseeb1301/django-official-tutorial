@@ -115,7 +115,62 @@ def newques(request):
             )
             newquestion.save()
             return HttpResponseRedirect(reverse("polls:index"))
+        
 
+def editques(request, id):
+    question = Question.objects.get(id = id)
+    if request.method == 'GET':
+        return render(request, 'polls/editques.html',{'question':question})
+    
+    if request.method == 'POST':
+        new_question = request.POST.get('update_ques')
+        question.question_text == new_question
+        question.save()
+        return render(request , 'polls/detail.html',{'question':question})
+        
+
+# def editques(request):
+#     return render(request, "polls/editques.html")
+
+# def updatques(request):
+#     try:
+#         edit_question=request.POST["updat_ques"]
+#         if not edit_question:
+#             raise KeyError
+#     except(KeyError):
+#         return render(
+#             request,
+#             "polls/editques.html",
+#             {
+#                 "error_message":"question could not be edited",
+#             },
+#         )
+#     else:
+#         try:
+#             for question in Question.objects.all():
+#                 if question.question_text == edit_question:
+#                     raise KeyError
+#         except(KeyError):
+#             return render(
+#                 request,
+#                 "polls/editques.html",
+#                 {
+#                     "error_message": "question already exits.",
+#                 },
+#             )
+#         else:
+#             editquestion= Question(
+#                 question_text = edit_question,
+#                 pub_date = timezone.now(),
+#             )
+#             editquestion.save()
+#             return HttpResponseRedirect(reverse("polls:index"))
+
+def deleteq(request, id):
+    if request.method == 'GET':
+      question = Question.objects.get(id=id) 
+      question.delete()
+    return render (request, "polls/index.html")
 
 
 

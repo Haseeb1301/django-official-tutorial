@@ -6,9 +6,8 @@
     <ol>
     {% for question in latest_question_list %}
         <li>
-            <a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}
-            </a>
-            </li>
+            <a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a>            
+        </li>
     {% endfor %}
     </ol>
                
@@ -16,6 +15,8 @@
      <p>No polls are available.</p>
 {% endif %}
 
-<a class="link1" href="{% url 'polls:addques' %}">Add new Question?</a>
+<a class="link1" href="{% url 'polls:addques' %}">Add new Question?</a><br>
+
+
 
 

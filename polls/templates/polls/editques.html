@@ -1,0 +1,11 @@
+<form action="{% url 'polls:editques' question.id%}" method="post">
+{% csrf_token %}
+    <!-- <fieldset>
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+{{question}}
+        <legend><h1>Edit question</h1></legend> -->
+        <label for="">Edit Questions :</label>
+        <input type="text" name="updat_ques">
+        <!-- </fieldset> -->
+        <input type="submit" value="submit" id="">
+</form>
