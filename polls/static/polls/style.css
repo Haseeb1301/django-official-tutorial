@@ -4,13 +4,12 @@ li a, ::marker{
 }
 
 body {
-    background: url("images/background1.jpg");
+    background: url("images/background.jpg");
     background-size: cover;
-    background-position: 50% 50%;
 }
 
-.link1 {
-    color: green;
+.addques {
+    color: greenyellow;
     font-size: 20px;
 }
 
@@ -19,7 +18,20 @@ body {
     font-size: 20px;
 }
 
-.deleteq {
-    color: red;
+.fcolor {
+    color: white;
+    font-size: 40px;
+}
+
+.bcolor a {
+    color: rgb(8, 7, 7);
     font-size: 20px;
+    border: 2px solid white; 
+    padding: 5px; 
+    background-color: beige;  
+}
+
+.top > a {
+    color: red;
+    font-size: 30px;
 }

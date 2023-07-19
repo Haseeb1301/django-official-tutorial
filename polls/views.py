@@ -7,7 +7,7 @@ from .models import Choice, Question
 from django.utils import timezone
 
 def index(request):
-    latest_question_list = Question.objects.order_by("pub_date")
+    latest_question_list = Question.objects.order_by("-pub_date")[:10]
     context = {"latest_question_list": latest_question_list}
     return render(request, "polls/index.html", context)
 
@@ -123,8 +123,8 @@ def editques(request, id):
         return render(request, 'polls/editques.html',{'question':question})
     
     if request.method == 'POST':
-        new_question = request.POST.get('update_ques')
-        question.question_text == new_question
+        new_question = request.POST.get('updat_ques')
+        question.question_text = new_question
         question.save()
         return render(request , 'polls/detail.html',{'question':question})
         
